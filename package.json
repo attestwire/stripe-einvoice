@@ -1,0 +1,70 @@
+{
+  "name": "@attestwire/stripe-einvoice",
+  "version": "0.1.0",
+  "description": "Turn a finalized Stripe invoice into a compliant EN 16931 e-invoice — XRechnung UBL or Factur-X/ZUGFeRD CII XML — mapped, generated and validated locally, with an optional call to the hosted Attestwire API for the Factur-X PDF.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Attestwire",
+  "homepage": "https://attestwire.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/attestwire/stripe-einvoice.git"
+  },
+  "bugs": {
+    "url": "https://github.com/attestwire/stripe-einvoice/issues"
+  },
+  "keywords": [
+    "stripe",
+    "stripe-invoice",
+    "e-invoice",
+    "einvoice",
+    "e-invoicing",
+    "en16931",
+    "xrechnung",
+    "factur-x",
+    "facturx",
+    "zugferd",
+    "peppol",
+    "ubl",
+    "cii",
+    "vat",
+    "invoice",
+    "compliance",
+    "webhook"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "dependencies": {
+    "@attestwire/en16931": "^0.14.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.4",
+    "typescript": "^5.9.3",
+    "vitest": "4.1.10"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
